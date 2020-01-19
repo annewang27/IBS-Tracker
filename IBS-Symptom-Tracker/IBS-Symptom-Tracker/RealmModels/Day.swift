@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 class Day: Object {
-    @objc dynamic var date = Date()
+    @objc dynamic var date = ""
 }

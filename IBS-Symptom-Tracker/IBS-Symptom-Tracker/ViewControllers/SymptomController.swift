@@ -67,9 +67,9 @@ class SymptomController: UIViewController {
             newSymptom.notes = notesInput.text
             newSymptom.severity = SeverityInput.text!
             newSymptom.name = SymptomNameInput.text!
+            newSymptom.day = dayObject
             
             realm.add(newSymptom)
-            // need to pass day in from previous view controller
         }
         
         _ = navigationController?.popToRootViewController(animated: true)

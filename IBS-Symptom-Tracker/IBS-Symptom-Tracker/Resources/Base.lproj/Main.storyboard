@@ -31,7 +31,7 @@
                                 <rect key="frame" x="20.666666666666664" y="429" width="372.66666666666663" height="40"/>
                                 <color key="backgroundColor" name="NavigationColour"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="372.66666666666669" id="o59-LY-X9r"/>
+                                    <constraint firstAttribute="width" constant="372.67000000000002" id="o59-LY-X9r"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Add">

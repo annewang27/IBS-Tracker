@@ -65,9 +65,9 @@ class SupplementController: UIViewController {
             newSupplement.notes = notesInput.text
             newSupplement.type = TypeInput.text!
             newSupplement.name = SupplementName.text!
+            newSupplement.day = dayObject
             
             realm.add(newSupplement)
-            // need to pass day in from previous view controller
         }
         
         _ = navigationController?.popToRootViewController(animated: true)

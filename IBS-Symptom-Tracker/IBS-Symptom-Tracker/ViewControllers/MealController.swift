@@ -19,7 +19,8 @@ class MealController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     var stackView: UIStackView!
     
-    var foodObjects: [Food] = []
+    var foodObjects: [FoodContainer] = []
+    var index = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +30,32 @@ class MealController: UIViewController {
         stackView.axis  = NSLayoutConstraint.Axis.vertical
         stackView.distribution  = UIStackView.Distribution.fillProportionally
         stackView.alignment = UIStackView.Alignment.fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing   = 16.0
         
         AddButton.layer.borderColor = UIColor.black.cgColor
         AddButton.layer.borderWidth = 1
         AddButton.layer.cornerRadius = 5
         
-//        stackView.addArrangedSubview(<#T##view: UIView##UIView#>)
+        stackView.addArrangedSubview(MealNameLabel)
+        stackView.addArrangedSubview(MealNameInput)
+        let container1 = FoodContainer()
+        foodObjects.append(container1)
+        let container2 = FoodContainer()
+        foodObjects.append(container2)
+        stackView.addArrangedSubview(container1)
+        stackView.addArrangedSubview(container2)
+        stackView.addArrangedSubview(AddFood)
+        stackView.addArrangedSubview(AddButton)
         scrollView.addSubview(stackView)
+        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20).isActive = true
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -50).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
         // add in meal name, option to add more food, final add button on storyboard
         // create programatic version of add food controller
@@ -48,55 +67,35 @@ class MealController: UIViewController {
     }
     
     @IBAction func onClickAddMeal(_ sender: Any) {
+        let realm = try! Realm()
+        let newMeal = Meal()
+                
+        try! realm.write {
+            newMeal.name = MealNameInput.text!
+            newMeal.day = dayObject
+            
+            realm.add(newMeal)
+        }
+        
+        try! realm.write {
+            for i in 0...index-2 {
+                let newFood = Food()
+                newFood.meal = newMeal
+                newFood.name = foodObjects[i].foodNameInput.text!
+                newFood.amount = foodObjects[i].amountInput.text!
+                newFood.notes = foodObjects[i].notesInput.text!
+                
+                realm.add(newFood)
+            }
+        }
+        
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func onClickAddFood(_ sender: Any) {
-        // add another thing to the stack view
+        index = index + 1
+        let newFoodContainer = FoodContainer()
+        foodObjects.append(newFoodContainer)
+        stackView.insertArrangedSubview(newFoodContainer, at: index)
     }
-    
-    func createFoodContainer() -> Food{
-        let newFood = Food()
-        
-        let foodContainer = UIStackView()
-        foodContainer.axis = NSLayoutConstraint.Axis.vertical
-        foodContainer.distribution = UIStackView.Distribution.fillEqually
-        foodContainer.alignment = UIStackView.Alignment.leading
-        foodContainer.spacing = 0.0
-        
-        let foodNameInput = UITextField(frame: CGRect(x: 0, y: 0, width: 372.67, height: 30))
-        foodNameInput.placeholder = " Enter food here..."
-        foodNameInput.borderStyle = .line
-        foodNameInput.font = .systemFont(ofSize: 18)
-        foodNameInput.backgroundColor = UIColor(named: "BodyColour")
-        foodNameInput.translatesAutoresizingMaskIntoConstraints = false
-        foodContainer.addSubview(foodNameInput)
-        
-        let amountInput = UITextField(frame: CGRect(x: 0, y: 0, width: 372.67, height: 30))
-        amountInput.placeholder = " Amount eaten..."
-        amountInput.borderStyle = .line
-        amountInput.font = .systemFont(ofSize: 18)
-        amountInput.translatesAutoresizingMaskIntoConstraints = false
-        foodContainer.addSubview(amountInput)
-        
-        let notesInput = UITextField(frame: CGRect(x: 0, y: 0, width: 372.67, height: 30))
-        notesInput.placeholder = " Any additional notes...."
-        notesInput.borderStyle = .line
-        notesInput.font = .systemFont(ofSize: 18)
-        notesInput.translatesAutoresizingMaskIntoConstraints = false
-        foodContainer.addSubview(notesInput)
-        
-        
-//        NSLayoutConstraint.activate([
-//        // place constraints in here separated by commas
-//            // loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            // loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-//        ])
-        
-        
-        
-        // return food, add it into an array, edit things in the array, add everything in the array when you click add meal 
-        return newFood
-    }
-    
 }
