@@ -16,6 +16,9 @@ class BaseViewController: UIViewController {
     var realm: Realm!
     var scrollView: UIScrollView!
     var stackView: UIStackView!
+    let nextDateSelector = #selector(changeNextDate(_sender:))
+    let prevDateSelector = #selector(changePrevDate(_sender:))
+    var unformattedDate: Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +37,16 @@ class BaseViewController: UIViewController {
         realm = try! Realm()
         
         // Check if I need a new day object on realm
-        let dateFormat = DateFormatter()
-        dateFormat.dateStyle = .medium
-        dateFormat.timeStyle = .none
-        let today = dateFormat.string(from: Date())
-        checkAddNewDate(date: today)
+        unformattedDate = Date()
+        checkAddNewDate(unformattedDate: unformattedDate)
+
+        let right = UIImage(systemName: "chevron.right")
+        let next = UIBarButtonItem(image: right, style: .plain, target: self, action: nextDateSelector)
+        navigationItem.rightBarButtonItem = next
         
-        navigationItem.title = today
+        let left = UIImage(systemName: "chevron.left")
+        let prev = UIBarButtonItem(image: left, style: .plain, target: self, action: prevDateSelector)
+        navigationItem.leftBarButtonItem = prev
         
         // add scroll view
         scrollView = UIScrollView()
@@ -71,16 +77,36 @@ class BaseViewController: UIViewController {
         performSegue(withIdentifier: "SegueToOptions", sender: self)
     }
     
-    func checkAddNewDate(date: String) {
-        let checkTodayInit = realm.objects(Day.self).filter("date = %@", date)
-        if checkTodayInit.isEmpty {
+    func checkAddNewDate(unformattedDate: Date) {
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .medium
+        dateFormat.timeStyle = .none
+        let formattedDate = dateFormat.string(from: unformattedDate)
+        
+        navigationItem.title = formattedDate
+        let dayExists = realm.objects(Day.self).filter("date = %@", formattedDate)
+        if dayExists.isEmpty {
             let newDayObject = Day()
-            newDayObject.date = date
+            newDayObject.date = formattedDate
             try! realm.write {
                 realm.add(newDayObject)
             }
         }
-        dayObject = checkTodayInit[0]
+        dayObject = dayExists[0]
+    }
+    
+    @objc func changeNextDate (_sender: Any) {
+        let newDate = Calendar.current.date(byAdding: .day, value: 1, to: unformattedDate)!
+        unformattedDate = newDate
+        checkAddNewDate(unformattedDate: unformattedDate)
+        updateRealmResults()
+    }
+    
+    @objc func changePrevDate (_sender: Any) {
+        let newDate = Calendar.current.date(byAdding: .day, value: -1, to: unformattedDate)!
+        unformattedDate = newDate
+        checkAddNewDate(unformattedDate: unformattedDate)
+        updateRealmResults()
     }
     
     func updateRealmResults () {
