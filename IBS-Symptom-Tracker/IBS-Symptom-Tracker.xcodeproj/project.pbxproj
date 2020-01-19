@@ -27,6 +27,7 @@
 		855597FB23D3E8360060DFE7 /* SupplementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855597FA23D3E8360060DFE7 /* SupplementController.swift */; };
 		855597FD23D406DE0060DFE7 /* SymptomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855597FC23D406DE0060DFE7 /* SymptomController.swift */; };
 		855597FF23D411550060DFE7 /* MealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855597FE23D411550060DFE7 /* MealController.swift */; };
+		8555980223D4987C0060DFE7 /* AddFoodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8555980123D4987C0060DFE7 /* AddFoodView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		855597FA23D3E8360060DFE7 /* SupplementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementController.swift; sourceTree = "<group>"; };
 		855597FC23D406DE0060DFE7 /* SymptomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomController.swift; sourceTree = "<group>"; };
 		855597FE23D411550060DFE7 /* MealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealController.swift; sourceTree = "<group>"; };
+		8555980123D4987C0060DFE7 /* AddFoodView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFoodView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				855597C723D3755E0060DFE7 /* Main.storyboard */,
 				855597CA23D375610060DFE7 /* Assets.xcassets */,
 				855597CC23D375610060DFE7 /* LaunchScreen.storyboard */,
+				8555980123D4987C0060DFE7 /* AddFoodView.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8555980223D4987C0060DFE7 /* AddFoodView.xib in Resources */,
 				855597CE23D375610060DFE7 /* LaunchScreen.storyboard in Resources */,
 				855597CB23D375610060DFE7 /* Assets.xcassets in Resources */,
 				855597C923D3755E0060DFE7 /* Main.storyboard in Resources */,

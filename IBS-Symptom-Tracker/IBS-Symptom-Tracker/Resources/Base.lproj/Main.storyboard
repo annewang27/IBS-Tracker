@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-J0-0SL">
-                                <rect key="frame" x="20.666666666666664" y="138" width="372.66666666666663" height="30"/>
+                                <rect key="frame" x="20.666666666666664" y="138" width="372.66666666666663" height="35"/>
                                 <color key="backgroundColor" name="BodyColour"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372.66666666666674" id="ZPf-ol-afM"/>
@@ -101,7 +101,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I97-JM-DnU">
-                                <rect key="frame" x="20.666666666666664" y="268" width="372.66666666666663" height="30"/>
+                                <rect key="frame" x="20.666666666666664" y="268" width="372.66666666666663" height="35"/>
                                 <color key="backgroundColor" name="BodyColour"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372.67000000000002" id="fsg-r1-YIp"/>
@@ -111,7 +111,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKV-Ed-RKw">
-                                <rect key="frame" x="20.666666666666664" y="386.33333333333331" width="372.66666666666663" height="30"/>
+                                <rect key="frame" x="20.666666666666664" y="386.33333333333331" width="372.66666666666663" height="35"/>
                                 <color key="backgroundColor" name="BodyColour"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372.67000000000002" id="yIq-7I-B64"/>
@@ -121,7 +121,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Supplement Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLI-Ly-W3G">
-                                <rect key="frame" x="20.666666666666664" y="151" width="372.66666666666663" height="31"/>
+                                <rect key="frame" x="20.666666666666664" y="151" width="372.66666666666663" height="35"/>
                                 <color key="backgroundColor" name="BodyColour"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372.67000000000002" id="1xt-LT-pL8"/>
@@ -298,7 +298,7 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SegueToBM" id="Q17-Z7-3Ei"/>
                         <segue destination="fgf-P2-2kb" kind="show" identifier="SegueToSupplement" id="unC-N1-TIk"/>
                         <segue destination="qI5-Yk-z11" kind="show" identifier="SegueToSymptom" id="3Aw-7p-GNO"/>
-                        <segue destination="F6l-ha-Fr1" kind="show" id="RfG-mc-kuu"/>
+                        <segue destination="F6l-ha-Fr1" kind="show" identifier="SegueToMeal" id="RfG-mc-kuu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnR-wk-L7U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -314,7 +314,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Severity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqx-Zq-lLE">
-                                <rect key="frame" x="20.666666666666664" y="290" width="372.66666666666663" height="30"/>
+                                <rect key="frame" x="20.666666666666664" y="290" width="372.66666666666663" height="35"/>
                                 <color key="backgroundColor" name="BodyColour"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372.67000000000002" id="7sy-tO-tFa"/>
@@ -324,7 +324,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="  Symptom Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-oK-KAb">
-                                <rect key="frame" x="20.666666666666664" y="171" width="372.66666666666663" height="30"/>
+                                <rect key="frame" x="20.666666666666664" y="171" width="372.66666666666663" height="35"/>
                                 <color key="backgroundColor" name="BodyColour"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372.67000000000002" id="ppe-K9-K2n"/>
@@ -334,7 +334,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7n-Zb-GxF">
-                                <rect key="frame" x="20.666666666666664" y="415" width="372.66666666666663" height="30"/>
+                                <rect key="frame" x="20.666666666666664" y="415" width="372.66666666666663" height="35"/>
                                 <color key="backgroundColor" name="BodyColour"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372.67000000000002" id="v2G-nO-iee"/>
@@ -415,42 +415,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwF-Al-MfT">
-                                <rect key="frame" x="20.666666666666657" y="773" width="372.66666666666674" height="39"/>
-                                <color key="backgroundColor" name="NavigationColour"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-pG-F1v">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Meal Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75V-SJ-Rw5">
+                                        <rect key="frame" x="20.666666666666657" y="50" width="372.66666666666674" height="26.333333333333329"/>
+                                        <color key="backgroundColor" name="BodyColour"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="372.67000000000002" id="cBm-eQ-2AB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wqp-Zy-zK0">
+                                        <rect key="frame" x="20.666666666666657" y="126.33333333333334" width="372.66666666666674" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="372.67000000000002" id="bHx-hn-GCq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbZ-Aw-dB9">
+                                        <rect key="frame" x="20.666666666666657" y="370" width="372.66666666666674" height="34"/>
+                                        <color key="backgroundColor" name="BodyColour"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="372.67000000000002" id="gbs-KY-UVB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Add Another Food">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickAddFood:" destination="F6l-ha-Fr1" eventType="touchUpInside" id="rR8-v9-URB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwF-Al-MfT">
+                                        <rect key="frame" x="20.666666666666657" y="663" width="372.66666666666674" height="39"/>
+                                        <color key="backgroundColor" name="NavigationColour"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="372.67000000000002" id="wHw-Mq-bvs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickAddMeal:" destination="F6l-ha-Fr1" eventType="touchUpInside" id="HzT-hg-wYp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="372.67000000000002" id="wHw-Mq-bvs"/>
+                                    <constraint firstItem="Wqp-Zy-zK0" firstAttribute="top" secondItem="75V-SJ-Rw5" secondAttribute="bottom" constant="50.000000000000014" id="4Se-rJ-oxb"/>
+                                    <constraint firstAttribute="bottom" secondItem="75V-SJ-Rw5" secondAttribute="bottom" constant="697.66666666666663" id="4ag-Lu-jIS"/>
+                                    <constraint firstAttribute="trailing" secondItem="75V-SJ-Rw5" secondAttribute="trailing" constant="20.666666666666629" id="Hcg-Nd-87d"/>
+                                    <constraint firstItem="rwF-Al-MfT" firstAttribute="centerX" secondItem="Hmf-pG-F1v" secondAttribute="centerX" id="KJG-M9-fo5"/>
+                                    <constraint firstItem="75V-SJ-Rw5" firstAttribute="top" secondItem="kXc-G2-gOX" secondAttribute="top" constant="50" id="Nxn-ra-woE"/>
+                                    <constraint firstItem="nbZ-Aw-dB9" firstAttribute="centerX" secondItem="Hmf-pG-F1v" secondAttribute="centerX" id="UXU-K8-2Ey"/>
+                                    <constraint firstItem="nbZ-Aw-dB9" firstAttribute="centerY" secondItem="Hmf-pG-F1v" secondAttribute="centerY" id="W4V-Vw-itu"/>
+                                    <constraint firstItem="75V-SJ-Rw5" firstAttribute="centerX" secondItem="Hmf-pG-F1v" secondAttribute="centerX" id="dUx-ps-3lj"/>
+                                    <constraint firstItem="kXc-G2-gOX" firstAttribute="bottom" secondItem="rwF-Al-MfT" secondAttribute="bottom" constant="72" id="e9K-7a-Tlv"/>
+                                    <constraint firstItem="Wqp-Zy-zK0" firstAttribute="centerX" secondItem="Hmf-pG-F1v" secondAttribute="centerX" id="iaY-12-2mL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meal Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75V-SJ-Rw5">
-                                <rect key="frame" x="20" y="161" width="372.66666666666663" height="30"/>
-                                <color key="backgroundColor" name="BodyColour"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="372.67000000000002" id="cBm-eQ-2AB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <viewLayoutGuide key="contentLayoutGuide" id="GFL-3d-yx1"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="kXc-G2-gOX"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="75V-SJ-Rw5" firstAttribute="top" secondItem="waZ-Ec-nbg" secondAttribute="top" constant="50" id="0Q8-FC-K6h"/>
-                            <constraint firstItem="75V-SJ-Rw5" firstAttribute="centerX" secondItem="waZ-Ec-nbg" secondAttribute="centerX" id="Ph1-s2-dlU"/>
-                            <constraint firstItem="waZ-Ec-nbg" firstAttribute="bottom" secondItem="rwF-Al-MfT" secondAttribute="bottom" constant="50" id="V3H-Vu-rV9"/>
-                            <constraint firstItem="rwF-Al-MfT" firstAttribute="centerX" secondItem="waZ-Ec-nbg" secondAttribute="centerX" id="tcf-Zm-c8H"/>
+                            <constraint firstItem="Hmf-pG-F1v" firstAttribute="centerY" secondItem="waZ-Ec-nbg" secondAttribute="centerY" id="6Qn-Lm-boe"/>
+                            <constraint firstItem="waZ-Ec-nbg" firstAttribute="bottom" secondItem="Hmf-pG-F1v" secondAttribute="bottom" id="Iou-i5-zyu"/>
+                            <constraint firstItem="Hmf-pG-F1v" firstAttribute="centerX" secondItem="waZ-Ec-nbg" secondAttribute="centerX" id="NWs-S4-VrN"/>
+                            <constraint firstItem="waZ-Ec-nbg" firstAttribute="trailing" secondItem="Hmf-pG-F1v" secondAttribute="trailing" id="Qdn-a8-tvF"/>
+                            <constraint firstItem="Hmf-pG-F1v" firstAttribute="leading" secondItem="waZ-Ec-nbg" secondAttribute="leading" id="Toy-C9-d0a"/>
+                            <constraint firstItem="Hmf-pG-F1v" firstAttribute="top" secondItem="waZ-Ec-nbg" secondAttribute="top" id="cD7-70-eaf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="waZ-Ec-nbg"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uje-Jl-eWD"/>
+                    <connections>
+                        <outlet property="AddButton" destination="rwF-Al-MfT" id="xdx-bP-PiY"/>
+                        <outlet property="AddFood" destination="nbZ-Aw-dB9" id="nJ4-3r-emx"/>
+                        <outlet property="MealNameInput" destination="Wqp-Zy-zK0" id="ZGu-Dz-T91"/>
+                        <outlet property="MealNameLabel" destination="75V-SJ-Rw5" id="dll-dj-CDr"/>
+                        <outlet property="scrollView" destination="Hmf-pG-F1v" id="50P-6S-avv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egI-dt-dFp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="583"/>
+            <point key="canvasLocation" x="2163.768115942029" y="582.58928571428567"/>
         </scene>
     </scenes>
     <resources>

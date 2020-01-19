@@ -20,6 +20,7 @@ class SymptomController: UIViewController {
     
     
     let notesInput = UITextView(frame: CGRect(x: 20, y: 400, width: 374.0, height: 170.0))
+    var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class SymptomController: UIViewController {
         
         navigationItem.title = "Add Symptom"
         
-        let stackView   = UIStackView()
+        stackView = UIStackView()
         stackView.axis  = NSLayoutConstraint.Axis.vertical
         stackView.distribution  = UIStackView.Distribution.fillEqually
         stackView.alignment = UIStackView.Alignment.fill

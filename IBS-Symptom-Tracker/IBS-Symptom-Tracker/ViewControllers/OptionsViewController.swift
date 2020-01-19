@@ -18,6 +18,7 @@ class OptionsViewController: UIViewController {
     }
 
     @IBAction func onClickAddMeal(_ sender: Any) {
+        performSegue(withIdentifier: "SegueToMeal", sender: self)
     }
     
     @IBAction func onClickAddSymptom(_ sender: Any) {
