@@ -19,7 +19,6 @@ class BMController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         // Add textview to add notes about the bowel movement
         notesInput.layer.borderWidth = 1
@@ -60,9 +59,9 @@ class BMController: UIViewController {
         try! realm.write {
             let newBowelMovement = BowelMovement()
             newBowelMovement.notes = notesInput.text
+            newBowelMovement.day = dayObject
             
             realm.add(newBowelMovement)
-            // need to pass day in from previous view controller
         }
         
         _ = navigationController?.popToRootViewController(animated: true)

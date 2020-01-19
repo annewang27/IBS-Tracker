@@ -20,6 +20,7 @@ class SymptomController: UIViewController {
     
     
     let notesInput = UITextView(frame: CGRect(x: 20, y: 400, width: 374.0, height: 170.0))
+    var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class SymptomController: UIViewController {
         
         navigationItem.title = "Add Symptom"
         
-        let stackView   = UIStackView()
+        stackView = UIStackView()
         stackView.axis  = NSLayoutConstraint.Axis.vertical
         stackView.distribution  = UIStackView.Distribution.fillEqually
         stackView.alignment = UIStackView.Alignment.fill
@@ -66,9 +67,9 @@ class SymptomController: UIViewController {
             newSymptom.notes = notesInput.text
             newSymptom.severity = SeverityInput.text!
             newSymptom.name = SymptomNameInput.text!
+            newSymptom.day = dayObject
             
             realm.add(newSymptom)
-            // need to pass day in from previous view controller
         }
         
         _ = navigationController?.popToRootViewController(animated: true)
