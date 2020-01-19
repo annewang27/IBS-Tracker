@@ -17,3 +17,5 @@ var dayObject: Day!
     // Show on entry
     // Highlight colour
 // show things in the order they're entered instead of in categories
+// add ability to edit previously added things
+// make the app prettier
