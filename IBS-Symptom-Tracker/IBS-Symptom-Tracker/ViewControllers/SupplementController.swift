@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class SupplementController: UIViewController {
+class SupplementController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var AddButton: UIButton!
     @IBOutlet weak var SupplementLabel: UILabel!
@@ -56,7 +56,13 @@ class SupplementController: UIViewController {
         
         stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+        // set text field delegates
+        SupplementName.delegate = self
+        TypeInput.delegate = self
+        notesInput.delegate = self
     }
+    
     @IBAction func onClickAdd(_ sender: Any) {
         let realm = try! Realm()
             
@@ -71,5 +77,14 @@ class SupplementController: UIViewController {
         }
         
         _ = navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if SupplementName.isFirstResponder {
+            TypeInput.becomeFirstResponder()
+        } else {
+            TypeInput.resignFirstResponder()
+        }
+        return true
     }
 }
